@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Wall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+
+[node name="World" type="Node"]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 619, 382 )
+
+[node name="wall" type="Node" parent="."]
+
+[node name="Platform" type="Node" parent="wall"]
+
+[node name="Wall3" parent="wall/Platform" instance=ExtResource( 1 )]
+position = Vector2( 620, 456 )
+scale = Vector2( 4, 0.5 )
+
+[node name="Wall4" parent="wall/Platform" instance=ExtResource( 1 )]
+position = Vector2( 362, 257 )
+scale = Vector2( 4, 0.5 )
+
+[node name="side wall" type="Node" parent="wall"]
+
+[node name="Wall right" parent="wall/side wall" instance=ExtResource( 1 )]
+position = Vector2( 762, 276 )
+scale = Vector2( 0.5, 10 )
+
+[node name="Wall left" parent="wall/side wall" instance=ExtResource( 1 )]
+position = Vector2( 218, 269 )
+scale = Vector2( 0.5, 10 )
